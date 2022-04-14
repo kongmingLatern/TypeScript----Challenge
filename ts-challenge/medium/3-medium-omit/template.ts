@@ -2,14 +2,6 @@ type MyOmit<T, K> = {
   [P in MyExclude<keyof T, K>]: T[P]
 }
 
-interface Todo {
-  title: string
-  description: string
-  completed: boolean
-}
-type abc = MyOmit<Todo, 'description'>
-
-
 // js
 function pick(todo: any, keys: any) {
   const obj: any = {}
