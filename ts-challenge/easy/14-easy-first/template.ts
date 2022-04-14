@@ -11,7 +11,7 @@
 type First<T extends any[]> = T extends [infer First, ...infer other]
   ? First
   : never
-
+type r1 = First<[3, 2, 1]>
 // js
 // const first = (arr: string | any[]) => {
 //   // 判断 arr 是否是一个空数组，如果是，返回 never
