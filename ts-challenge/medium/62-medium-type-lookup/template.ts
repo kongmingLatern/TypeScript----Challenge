@@ -1,1 +1,2 @@
-type LookUp<U extends { type: string }, T extends string> = U extends { type: T } ? U : never
+type LookUp<T extends { type: string }, U extends string> =
+  T extends { type: U } ? T : never
