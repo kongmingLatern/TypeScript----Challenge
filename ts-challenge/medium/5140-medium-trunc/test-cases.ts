@@ -1,5 +1,5 @@
 import { Equal, Expect, ExpectFalse, NotEqual } from '@type-challenges/utils'
-
+type p = Trunc<-5.1>
 type cases = [
   Expect<Equal<Trunc<0.1>, '0'>>,
   Expect<Equal<Trunc<1.234>, '1'>>,
