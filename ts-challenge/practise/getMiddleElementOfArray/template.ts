@@ -3,7 +3,7 @@ type Tail<T extends unknown[]> =
   ? R
   : never
 
-type getMediumElement<
+type getMiddleElement<
   T extends unknown[],
   K extends unknown[] = [],
   U extends unknown[] = []> =
@@ -12,7 +12,14 @@ type getMediumElement<
   ? Rest
   : Rest["length"] extends 0
   ? [First<T>, Tail<T>]
-  : getMediumElement<Rest, [...K, unknown], [...U, unknown]>
+  : getMiddleElement<Rest, [...K, unknown], [...U, unknown]>
   : T
 
-type p = getMediumElement<never>
+type GetMediumElement<T extends unknown[]> =
+  T["length"] extends 2
+  ? T
+  : T extends [infer Head, ...infer Rest, infer Tail]
+  ? GetMediumElement<Rest>
+  : T
+
+type p = GetMediumElement<[1, 2, 3, 6, 4, 5]>
