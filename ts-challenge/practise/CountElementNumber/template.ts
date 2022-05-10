@@ -1,6 +1,6 @@
 type CountElementNumber<
   T extends unknown[],
-  K extends unknown,
+  K extends number | symbol | string,
   U extends unknown[] = []
   > =
   T extends [infer R, ...infer Rest]
