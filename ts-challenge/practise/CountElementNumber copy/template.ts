@@ -8,4 +8,4 @@ type CountElementNumber<
   ? CountElementNumber<Rest, K, [...U, unknown]>
   : CountElementNumber<Rest, K, U>
   : U["length"]
-type o = CountElementNumber<[1, 2, 3, 4, 4], 4>
+type o = CountElementNumber<[1, 2, 3, 4, 5, 1, 2, 3, 8], 8>
