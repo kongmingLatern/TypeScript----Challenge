@@ -1,5 +1,6 @@
 import { Equal, Expect } from "@type-challenges/utils";
 type cases = [
+  Expect<Equal<CountElementNumberToObject<[]>, {}>>,
   Expect<Equal<CountElementNumberToObject<[1, 2, 3, 4, 5]>, {
     1: 1,
     2: 1,

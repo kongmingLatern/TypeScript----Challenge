@@ -3,4 +3,5 @@ type CountElementNumberToObject<
   > = {
     [P in T[number]]: CountElementNumber<Flatten<T>, P>
   }
-type p = CountElementNumberToObject<[any, any]>
+
+type o = CountElementNumberToObject<[1, 2, 3, 4, 5]>
