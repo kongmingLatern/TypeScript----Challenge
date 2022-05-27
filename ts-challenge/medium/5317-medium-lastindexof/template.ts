@@ -1,9 +1,9 @@
-type IsAny<T> = boolean extends (T extends string ? true : false) ? true : false;
+type IsAny1<T> = boolean extends (T extends string ? true : false) ? true : false;
 
 type LastIndexOf<T, U> =
   T extends [...infer F, infer End]
-  ? IsAny<U> extends true
-  ? IsAny<End> extends true
+  ? IsAny1<U> extends true
+  ? IsAny1<End> extends true
   ? F['length']
   : LastIndexOf<F, U>
   : U extends End
