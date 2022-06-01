@@ -5,4 +5,5 @@ type Format<T extends string> =
   : (d1: number) => Format<`${First}${Rest}`>
   : string
 
+
 type Interaction<T> = 's' & ("s" | "d")
