@@ -8,4 +8,6 @@ type StringOfLength<
   ? StringOfLength<Rest, [...S, F]>
   : never
 
+
+
 type testStringLength = StringOfLength<'12345678901234'>
