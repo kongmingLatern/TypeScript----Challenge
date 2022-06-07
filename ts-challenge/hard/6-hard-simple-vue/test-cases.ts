@@ -35,7 +35,7 @@ SimpleVue({
     },
   },
 })
-function alert(amount: number) {
+function alert(amount: number | string) {
   throw new Error('Function not implemented.')
 }
 
