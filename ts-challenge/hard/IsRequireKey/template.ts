@@ -9,10 +9,18 @@ type getRequireKeys<
     [P in keyof T as T[P] extends K[P] ? P : never]: T[P]
   }
 
-type IsRequiredKey<
-  T extends Record<string, any>,
-  K extends string
-  > =
-  [K] extends [keyof getRequireKeys<T>]
+// type IsRequiredKey<
+//   T extends Record<string, any>,
+//   K extends string
+//   > =
+//   [K] extends [keyof getRequireKeys<T>]
+//   ? true
+//   : false
+
+
+
+type IsRequiredKey<T, K extends keyof T = keyof T> = T extends {
+  [P in K]-?: T[P]
+}
   ? true
   : false
