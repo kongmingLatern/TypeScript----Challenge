@@ -1,7 +1,6 @@
 type IsPalindrome<
   T extends string | number,
   P extends unknown[] = GetArr<T>,
-  K extends boolean = true
   > =
   P extends [infer F, ...infer Rest, infer P]
   ? Rest["length"] extends 2
@@ -9,9 +8,9 @@ type IsPalindrome<
   ? true
   : false
   : F extends P
-  ? IsPalindrome<T, Rest, true>
+  ? IsPalindrome<T, Rest>
   : false
-  : K
+  : true
 
 type GetArr<
   T extends number | string,
