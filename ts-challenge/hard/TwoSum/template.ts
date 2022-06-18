@@ -1,14 +1,16 @@
 type ToArray<
   T extends number,
   A extends number[] = []
-  > = A['length'] extends T
+  > =
+  A['length'] extends T
   ? A
   : ToArray<T, [...A, 1]>;
 
 type diff<
   S extends number,
   U extends number
-  > = ToArray<S> extends [...ToArray<U>, ...infer R]
+  > =
+  ToArray<S> extends [...ToArray<U>, ...infer R]
   ? R['length']
   : -1;
 
